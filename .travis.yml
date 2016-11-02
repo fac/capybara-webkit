@@ -35,8 +35,10 @@ matrix:
   allow_failures:
     - gemfile: gemfiles/master.gemfile
 gemfile:
-  - gemfiles/2.6.gemfile
-  - gemfiles/2.5.gemfile
+  - gemfiles/2.7.gemfile
+  - gemfiles/2.8.gemfile
+  - gemfiles/2.9.gemfile
+  - gemfiles/2.10.gemfile
 before_install:
   - gem install bundler
 install: bundle
