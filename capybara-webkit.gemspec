@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- {spec,features}/*`.split("\n")
   s.require_path = "lib"
+  s.bindir       = "bin"
 
   s.extensions = "extconf.rb"
 
@@ -33,4 +34,3 @@ Gem::Specification.new do |s|
   s.add_development_dependency("selenium-webdriver")
   s.add_development_dependency("launchy")
 end
-
