@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.bindir       = "bin"
 
   s.extensions = "extconf.rb"
-  s.executables = "bin/webkit_server"
+  s.executables = "webkit_server"
 
   s.required_ruby_version = ">= 1.9.0"
 
