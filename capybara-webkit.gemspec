@@ -14,10 +14,8 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- {spec,features}/*`.split("\n")
   s.require_path = "lib"
-  s.bindir       = "bin"
 
   s.extensions = "extconf.rb"
-  s.executables = "webkit_server"
 
   s.required_ruby_version = ">= 1.9.0"
 
