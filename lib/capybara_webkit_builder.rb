@@ -57,7 +57,7 @@ module CapybaraWebkitBuilder
     end
   end
 
-  def build(build_dir)
+  def build(build_dir = "bin")
     make or return false
 
     FileUtils.mkdir(build_dir) unless File.directory?(build_dir)
