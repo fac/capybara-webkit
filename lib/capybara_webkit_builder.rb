@@ -57,11 +57,11 @@ module CapybaraWebkitBuilder
     end
   end
 
-  def build
+  def build(build_dir = "bin")
     make or return false
 
-    FileUtils.mkdir("bin") unless File.directory?("bin")
-    FileUtils.cp(path_to_binary, "bin", :preserve => true)
+    FileUtils.mkdir(build_dir) unless File.directory?(build_dir)
+    FileUtils.cp(path_to_binary, build_dir, :preserve => true)
   end
 
   def clean
@@ -83,10 +83,10 @@ module CapybaraWebkitBuilder
     configs
   end
 
-  def build_all
+  def build_all(build_dir)
     makefile &&
     qmake &&
-    build &&
+    build(build_dir) &&
     clean
   end
 

@@ -17,4 +17,5 @@ unless libs.empty?
 end
 
 require File.join(File.expand_path(File.dirname(__FILE__)), "lib", "capybara_webkit_builder")
-CapybaraWebkitBuilder.build_all
+CapybaraWebkitBuilder.build_all(RbConfig::CONFIG["sitelibdir"] || "bin")
+FileUtils.copy("bin/Info.plist", RbConfig::CONFIG["sitelibdir"])

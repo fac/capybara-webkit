@@ -4,7 +4,20 @@ require "thread"
 module Capybara
   module Webkit
     class Server
-      SERVER_PATH = File.expand_path("../../../../bin/webkit_server", __FILE__)
+      def self.find_webkit_server_path
+        paths_to_check = ["../../../../bin"]
+        gemspec = Gem.loaded_specs["capybara-webkit"]
+        paths_to_check.concat(gemspec.require_paths) if gemspec
+
+        paths_to_check.each do |path|
+          filepath = File.expand_path("#{path}/webkit_server", __FILE__)
+          return filepath if File.exists?(filepath)
+        end
+
+        raise "Could not find the webkit_server executable"
+      end
+
+      SERVER_PATH = find_webkit_server_path
       WEBKIT_SERVER_START_TIMEOUT = 15
 
       attr_reader :port, :pid
