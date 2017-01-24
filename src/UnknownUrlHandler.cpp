@@ -1,6 +1,7 @@
 #include "UnknownUrlHandler.h"
 #include "NetworkReplyProxy.h"
 #include "NoOpReply.h"
+#include <QTextStream>
 
 UnknownUrlHandler::UnknownUrlHandler(
   RequestHandler *next,
